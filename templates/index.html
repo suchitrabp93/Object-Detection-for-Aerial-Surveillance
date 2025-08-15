@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object Detection for Aerial Surveillance</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="main-header">
+    <h1>Object Detection for Aerial Surveillance</h1>
+    <nav class="navbar">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#upload" class="nav-link">Upload</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="section home-section">
+    <div class="content">
+      <h2>Welcome to Object Detection for Aerial Surveillance</h2>
+      <p class="subtext">Explore our platform designed for aerial surveillance object detection. This project identifies and classifies pedestrians, vehicles, and other objects from aerial imagery, supporting applications in security and monitoring.</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="content">
+      <h2>About This Project</h2>
+      <p>This project focuses on detecting objects such as vehicles and people in aerial drone imagery, addressing challenges like varying lighting, overlapping objects, and complex backgrounds. By leveraging deep learning, it enhances object detection reliability, with applications in smart city planning, traffic management, and surveillance.</p>
+      <div class="features">
+        <div class="feature">
+          <h3>Multi-Object Detection</h3>
+          <p>Supports detection of multiple object types.</p>
+        </div>
+        <div class="feature">
+          <h3>Deep Learning Integration</h3>
+          <p>Utilizes a state-of-the-art YOLOv11 deep learning model.</p>
+        </div>
+        <div class="feature">
+          <h3>User-Friendly Interface</h3>
+          <p>Provides a user-friendly interface for uploading and analyzing aerial images.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upload Section -->
+  <section id="upload" class="section upload-section">
+    <div class="content">
+      <h2>Upload Your Files</h2>
+      <p>Drag and drop files, or browse manually to upload your creations.</p>
+      <form class="upload-form" onsubmit="uploadFile(event)">
+        <div class="upload-box" title="Upload your file">
+          <p>Drag and drop your file here</p>
+          <label for="file-input" class="hidden-label">Choose file to upload</label>
+        </div>
+        <input type="file" id="file-input" class="file-input" multiple title="Choose files to upload">
+        <button type="submit" class="btn upload-btn" title="Upload files">Upload Files</button>
+      </form>
+      <p class="upload-instructions">Supported: JPG or PNG.</p>
+      <div class="result-container hidden" id="result-container">
+        <img id="result-image" alt="Processed Image with Bounding Boxes" class="result-image">
+        <pre id="result" class="result-text"></pre>
+      </div>
+    </div>
+  </section>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
